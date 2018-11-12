@@ -109,7 +109,6 @@ class App:
         for row in c.execute("SELECT * FROM stocks WHERE name = '%s'" % name):
             print(row)
             result += str(row) + '\n'
-            break
         if result == '':
             result = "None"
         self.records_text.configure(text=result)
