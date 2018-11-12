@@ -74,6 +74,8 @@ class App:
         conn.commit()
         conn.close()
 
+        self.fetch()
+
     def generate_input_fields(self, fields):
         entries = []
         for field in fields:
