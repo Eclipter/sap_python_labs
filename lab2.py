@@ -43,16 +43,16 @@ class App:
         self.listbox.place(x=22, y=150)
 
         form_fields = 'Transaction Type', 'Quantity', 'Price'
-        self.entries = self.generate_input_fields(form_fields)
-        root.bind('<Return>', (lambda event, e=self.entries: self.insert_record))
+        entries = self.generate_input_fields(form_fields)
+        root.bind('<Return>', (lambda event, e=entries: self.insert_record(entries)))
         insert_button = Button(root, text='Insert',
-                               command=(lambda e=self.entries: self.insert_record))
+                               command=(lambda e=entries: self.insert_record(entries)))
         insert_button.pack(side=RIGHT, padx=5, pady=5)
 
         init_db()
 
-    def insert_record(self):
-        for entry in self.entries:
+    def insert_record(self, entries):
+        for entry in entries:
             field = entry[0]
             text = entry[1].get()
             print('%s: "%s"' % (field, text))
@@ -68,8 +68,8 @@ class App:
 
         now = sqlite3.datetime.datetime.now()
         sql = "INSERT INTO stocks (date, trans, name, qty, price) VALUES ('%s','%s','%s','%s','%s')" % (
-            now.strftime("%Y-%m-%d"), self.entries[0][1].get(), name, self.entries[1][1].get(),
-            self.entries[2][1].get())
+            now.strftime("%Y-%m-%d"), entries[0][1].get(), name, entries[1][1].get(),
+            entries[2][1].get())
         c.execute(sql)
         conn.commit()
         conn.close()
