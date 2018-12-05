@@ -27,8 +27,8 @@ def init():
     )''')
 
     groups = [('1a',), ('1b',), ('1c',), ('2a',), ('2b',), ('2c',), ('3a',), ('3b',), ('3c',)]
-    specialties = [('Mechanic',), ('Diver',), ('Surveyor',), ('Sound engineer',), ('Mason',), ('Cartographer',)]
-    students_names = ['Petrov', 'Ivanov', 'Sidorov', 'Mihailov', 'Lavochkin']
+    specialties = [('Musician',), ('Director',), ('Producer',), ('Programmer',), ('Butcher',), ('Accountant',)]
+    students_names = ['Petrov', 'Ivanov', 'Sidorov', 'Minchuk', 'Olber']
 
     c.execute('SELECT COUNT(*) FROM st_group')
     if c.fetchone()[0] == 0:
