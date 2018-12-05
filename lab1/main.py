@@ -126,7 +126,7 @@ def recursive_word_swap(sentence: str, first_word_idx=0, last_word_idx=0):
 def test_substr():
     print('Substring')
 
-    string = '1234567'
+    string = 'loremipsum'
     start_position = 2
     length = 4
     print(f'String: "{string}"\nStart position: {start_position}\nLength: {length}')
@@ -207,7 +207,7 @@ def test_sentence_intersect():
     print('Sentence intersect')
 
     sentence1 = 'Hello world, world hello, world.'
-    sentence2 = 'Hi world!'
+    sentence2 = 'Lorem world ipsum.'
 
     print(f'Sentence 1: "{sentence1}"\nSentence 2: "{sentence2}"')
 
@@ -220,7 +220,7 @@ def test_sentence_intersect():
 def test_word_length():
     print('Word length')
 
-    word = '  world!  '
+    word = '  lorem!  '
 
     print(f'Word: "{word}"')
 
